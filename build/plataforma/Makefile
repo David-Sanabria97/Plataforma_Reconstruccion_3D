@@ -1455,60 +1455,6 @@ actionlib_msgs_generate_messages_lisp/fast:
 	cd /home/david/Plataforma_Reconstruccion_3D/build && $(MAKE) -f plataforma/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make plataforma/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
 .PHONY : actionlib_msgs_generate_messages_lisp/fast
 
-plugin/comandos.o: plugin/comandos.cpp.o
-
-.PHONY : plugin/comandos.o
-
-# target to build an object file
-plugin/comandos.cpp.o:
-	cd /home/david/Plataforma_Reconstruccion_3D/build && $(MAKE) -f plataforma/CMakeFiles/plataforma.dir/build.make plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.o
-.PHONY : plugin/comandos.cpp.o
-
-plugin/comandos.i: plugin/comandos.cpp.i
-
-.PHONY : plugin/comandos.i
-
-# target to preprocess a source file
-plugin/comandos.cpp.i:
-	cd /home/david/Plataforma_Reconstruccion_3D/build && $(MAKE) -f plataforma/CMakeFiles/plataforma.dir/build.make plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.i
-.PHONY : plugin/comandos.cpp.i
-
-plugin/comandos.s: plugin/comandos.cpp.s
-
-.PHONY : plugin/comandos.s
-
-# target to generate assembly for a file
-plugin/comandos.cpp.s:
-	cd /home/david/Plataforma_Reconstruccion_3D/build && $(MAKE) -f plataforma/CMakeFiles/plataforma.dir/build.make plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.s
-.PHONY : plugin/comandos.cpp.s
-
-plugin/listener.o: plugin/listener.cpp.o
-
-.PHONY : plugin/listener.o
-
-# target to build an object file
-plugin/listener.cpp.o:
-	cd /home/david/Plataforma_Reconstruccion_3D/build && $(MAKE) -f plataforma/CMakeFiles/plataforma.dir/build.make plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.o
-.PHONY : plugin/listener.cpp.o
-
-plugin/listener.i: plugin/listener.cpp.i
-
-.PHONY : plugin/listener.i
-
-# target to preprocess a source file
-plugin/listener.cpp.i:
-	cd /home/david/Plataforma_Reconstruccion_3D/build && $(MAKE) -f plataforma/CMakeFiles/plataforma.dir/build.make plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.i
-.PHONY : plugin/listener.cpp.i
-
-plugin/listener.s: plugin/listener.cpp.s
-
-.PHONY : plugin/listener.s
-
-# target to generate assembly for a file
-plugin/listener.cpp.s:
-	cd /home/david/Plataforma_Reconstruccion_3D/build && $(MAKE) -f plataforma/CMakeFiles/plataforma.dir/build.make plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.s
-.PHONY : plugin/listener.cpp.s
-
 plugin/rotacion_plataforma.o: plugin/rotacion_plataforma.cpp.o
 
 .PHONY : plugin/rotacion_plataforma.o
@@ -1662,12 +1608,6 @@ help:
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... plugin/comandos.o"
-	@echo "... plugin/comandos.i"
-	@echo "... plugin/comandos.s"
-	@echo "... plugin/listener.o"
-	@echo "... plugin/listener.i"
-	@echo "... plugin/listener.s"
 	@echo "... plugin/rotacion_plataforma.o"
 	@echo "... plugin/rotacion_plataforma.i"
 	@echo "... plugin/rotacion_plataforma.s"

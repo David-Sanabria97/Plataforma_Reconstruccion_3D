@@ -9,7 +9,6 @@
 #include <gazebo/gazebo.hh>
 #include "comandos.h"
 
-
 namespace gazebo{
   void Listener::init(RotacionPlataforma * plataforma){
 
@@ -47,7 +46,7 @@ namespace gazebo{
   void Listener::listener(const std_msgs::String::ConstPtr& msg){
     std::string m=msg->data.c_str();
 	//	Comandos::ruta="";
-		rotacion_plataforma::pintar(m);
+		Comandos::procesar(m, this->plataforma);
   }
   void Listener::conexion(const ros::SingleSubscriberPublisher&){
     ROS_INFO("Me conecto");
@@ -63,7 +62,7 @@ namespace gazebo{
       this->cola.callAvailable(ros::WallDuration(timeout));
       std_msgs::String m;
       std::stringstream  ms;
-      //ms<<"hay conectados\r\n";
+
       ms<<this->plataforma->getEstado();
       m.data=ms.str();
 

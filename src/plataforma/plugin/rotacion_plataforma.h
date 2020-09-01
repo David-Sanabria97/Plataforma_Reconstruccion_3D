@@ -10,7 +10,6 @@ namespace gazebo{
 
       private: physics::JointPtr joint;
       private: common::PID pid;
-
       physics::ModelPtr modelo;
       sdf::ElementPtr sdf;
       Listener *listener;

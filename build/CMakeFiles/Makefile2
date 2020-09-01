@@ -497,7 +497,7 @@ plataforma/preinstall:
 plataforma/CMakeFiles/plataforma.dir/all:
 	$(MAKE) -f plataforma/CMakeFiles/plataforma.dir/build.make plataforma/CMakeFiles/plataforma.dir/depend
 	$(MAKE) -f plataforma/CMakeFiles/plataforma.dir/build.make plataforma/CMakeFiles/plataforma.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/david/Plataforma_Reconstruccion_3D/build/CMakeFiles --progress-num=14,15,16,17 "Built target plataforma"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/david/Plataforma_Reconstruccion_3D/build/CMakeFiles --progress-num=14,15 "Built target plataforma"
 .PHONY : plataforma/CMakeFiles/plataforma.dir/all
 
 # Include target in all.
@@ -507,7 +507,7 @@ all: plataforma/CMakeFiles/plataforma.dir/all
 
 # Build rule for subdir invocation for target.
 plataforma/CMakeFiles/plataforma.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Plataforma_Reconstruccion_3D/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Plataforma_Reconstruccion_3D/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 plataforma/CMakeFiles/plataforma.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Plataforma_Reconstruccion_3D/build/CMakeFiles 0
 .PHONY : plataforma/CMakeFiles/plataforma.dir/rule

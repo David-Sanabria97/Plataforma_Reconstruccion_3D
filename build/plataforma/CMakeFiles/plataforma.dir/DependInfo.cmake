@@ -4,8 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/comandos.cpp" "/home/david/Plataforma_Reconstruccion_3D/build/plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.o"
-  "/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/listener.cpp" "/home/david/Plataforma_Reconstruccion_3D/build/plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.o"
   "/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/rotacion_plataforma.cpp" "/home/david/Plataforma_Reconstruccion_3D/build/plataforma/CMakeFiles/plataforma.dir/plugin/rotacion_plataforma.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

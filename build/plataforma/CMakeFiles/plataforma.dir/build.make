@@ -81,66 +81,14 @@ plataforma/CMakeFiles/plataforma.dir/plugin/rotacion_plataforma.cpp.o.provides: 
 plataforma/CMakeFiles/plataforma.dir/plugin/rotacion_plataforma.cpp.o.provides.build: plataforma/CMakeFiles/plataforma.dir/plugin/rotacion_plataforma.cpp.o
 
 
-plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.o: plataforma/CMakeFiles/plataforma.dir/flags.make
-plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.o: /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/listener.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/david/Plataforma_Reconstruccion_3D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.o"
-	cd /home/david/Plataforma_Reconstruccion_3D/build/plataforma && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/plataforma.dir/plugin/listener.cpp.o -c /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/listener.cpp
-
-plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/plataforma.dir/plugin/listener.cpp.i"
-	cd /home/david/Plataforma_Reconstruccion_3D/build/plataforma && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/listener.cpp > CMakeFiles/plataforma.dir/plugin/listener.cpp.i
-
-plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/plataforma.dir/plugin/listener.cpp.s"
-	cd /home/david/Plataforma_Reconstruccion_3D/build/plataforma && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/listener.cpp -o CMakeFiles/plataforma.dir/plugin/listener.cpp.s
-
-plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.o.requires:
-
-.PHONY : plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.o.requires
-
-plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.o.provides: plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.o.requires
-	$(MAKE) -f plataforma/CMakeFiles/plataforma.dir/build.make plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.o.provides.build
-.PHONY : plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.o.provides
-
-plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.o.provides.build: plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.o
-
-
-plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.o: plataforma/CMakeFiles/plataforma.dir/flags.make
-plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.o: /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/comandos.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/david/Plataforma_Reconstruccion_3D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.o"
-	cd /home/david/Plataforma_Reconstruccion_3D/build/plataforma && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/plataforma.dir/plugin/comandos.cpp.o -c /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/comandos.cpp
-
-plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/plataforma.dir/plugin/comandos.cpp.i"
-	cd /home/david/Plataforma_Reconstruccion_3D/build/plataforma && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/comandos.cpp > CMakeFiles/plataforma.dir/plugin/comandos.cpp.i
-
-plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/plataforma.dir/plugin/comandos.cpp.s"
-	cd /home/david/Plataforma_Reconstruccion_3D/build/plataforma && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/comandos.cpp -o CMakeFiles/plataforma.dir/plugin/comandos.cpp.s
-
-plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.o.requires:
-
-.PHONY : plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.o.requires
-
-plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.o.provides: plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.o.requires
-	$(MAKE) -f plataforma/CMakeFiles/plataforma.dir/build.make plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.o.provides.build
-.PHONY : plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.o.provides
-
-plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.o.provides.build: plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.o
-
-
 # Object files for target plataforma
 plataforma_OBJECTS = \
-"CMakeFiles/plataforma.dir/plugin/rotacion_plataforma.cpp.o" \
-"CMakeFiles/plataforma.dir/plugin/listener.cpp.o" \
-"CMakeFiles/plataforma.dir/plugin/comandos.cpp.o"
+"CMakeFiles/plataforma.dir/plugin/rotacion_plataforma.cpp.o"
 
 # External object files for target plataforma
 plataforma_EXTERNAL_OBJECTS =
 
 /home/david/Plataforma_Reconstruccion_3D/devel/lib/libplataforma.so: plataforma/CMakeFiles/plataforma.dir/plugin/rotacion_plataforma.cpp.o
-/home/david/Plataforma_Reconstruccion_3D/devel/lib/libplataforma.so: plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.o
-/home/david/Plataforma_Reconstruccion_3D/devel/lib/libplataforma.so: plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.o
 /home/david/Plataforma_Reconstruccion_3D/devel/lib/libplataforma.so: plataforma/CMakeFiles/plataforma.dir/build.make
 /home/david/Plataforma_Reconstruccion_3D/devel/lib/libplataforma.so: /opt/ros/kinetic/lib/libgazebo_ros_api_plugin.so
 /home/david/Plataforma_Reconstruccion_3D/devel/lib/libplataforma.so: /opt/ros/kinetic/lib/libgazebo_ros_paths_plugin.so
@@ -223,7 +171,7 @@ plataforma_EXTERNAL_OBJECTS =
 /home/david/Plataforma_Reconstruccion_3D/devel/lib/libplataforma.so: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/david/Plataforma_Reconstruccion_3D/devel/lib/libplataforma.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
 /home/david/Plataforma_Reconstruccion_3D/devel/lib/libplataforma.so: plataforma/CMakeFiles/plataforma.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/david/Plataforma_Reconstruccion_3D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library /home/david/Plataforma_Reconstruccion_3D/devel/lib/libplataforma.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/david/Plataforma_Reconstruccion_3D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library /home/david/Plataforma_Reconstruccion_3D/devel/lib/libplataforma.so"
 	cd /home/david/Plataforma_Reconstruccion_3D/build/plataforma && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/plataforma.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -232,8 +180,6 @@ plataforma/CMakeFiles/plataforma.dir/build: /home/david/Plataforma_Reconstruccio
 .PHONY : plataforma/CMakeFiles/plataforma.dir/build
 
 plataforma/CMakeFiles/plataforma.dir/requires: plataforma/CMakeFiles/plataforma.dir/plugin/rotacion_plataforma.cpp.o.requires
-plataforma/CMakeFiles/plataforma.dir/requires: plataforma/CMakeFiles/plataforma.dir/plugin/listener.cpp.o.requires
-plataforma/CMakeFiles/plataforma.dir/requires: plataforma/CMakeFiles/plataforma.dir/plugin/comandos.cpp.o.requires
 
 .PHONY : plataforma/CMakeFiles/plataforma.dir/requires
 

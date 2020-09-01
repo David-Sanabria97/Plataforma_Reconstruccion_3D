@@ -6,18 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/comandos.cpp
-comandos.h
-/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/comandos.h
-stdio.h
--
-std_msgs/String.h
-/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/std_msgs/String.h
-vector
--
-rotacion_plataforma.h
-/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/rotacion_plataforma.h
-
 /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/comandos.h
 stdio.h
 -
@@ -29,26 +17,6 @@ rotacion_plataforma.h
 /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/rotacion_plataforma.h
 listener.h
 /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/listener.h
-
-/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/listener.cpp
-listener.h
-/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/listener.h
-ros/ros.h
-/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/ros/ros.h
-ros/callback_queue.h
-/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/ros/callback_queue.h
-ros/subscribe_options.h
-/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/ros/subscribe_options.h
-std_msgs/String.h
-/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/std_msgs/String.h
-stdio.h
--
-gazebo/gazebo.hh
--
-comandos.h
-/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/comandos.h
-rotacion_plataforma.h
-/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/rotacion_plataforma.h
 
 /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/listener.h
 ros/ros.h
@@ -67,6 +35,24 @@ rotacion_plataforma.h
 /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/rotacion_plataforma.h
 
 /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/rotacion_plataforma.cpp
+gazebo/transport/transport.hh
+-
+gazebo/msgs/msgs.hh
+-
+thread
+-
+ros/ros.h
+/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/ros/ros.h
+ros/callback_queue.h
+/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/ros/callback_queue.h
+ros/subscribe_options.h
+/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/ros/subscribe_options.h
+std_msgs/Float32.h
+/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/std_msgs/Float32.h
+std_msgs/String.h
+/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/std_msgs/String.h
+stdio.h
+-
 rotacion_plataforma.h
 /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/rotacion_plataforma.h
 listener.h
@@ -765,6 +751,22 @@ ros/forwards.h
 /opt/ros/kinetic/include/ros/ros/forwards.h
 
 /opt/ros/kinetic/include/rosconsole/macros_generated.h
+
+/opt/ros/kinetic/include/std_msgs/Float32.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
 
 /opt/ros/kinetic/include/std_msgs/String.h
 string
