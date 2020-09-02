@@ -12,11 +12,9 @@
 #include "std_msgs/String.h"
 
 #include <stdio.h>
-#include "rotacion_plataforma.h"
-#include "listener.h"
 #include <gazebo/gazebo.hh>
 #include <gazebo/physics/physics.hh>
-#include "comandos.h"
+
 
 namespace gazebo
 {
@@ -26,6 +24,7 @@ namespace gazebo
       private: common::PID pid;
       physics::ModelPtr modelo;
       std::stringstream  ms;
+      std_msgs::String m;
 
       /// A node use for ROS transport
       private: std::unique_ptr<ros::NodeHandle> rosNode;
@@ -39,6 +38,7 @@ namespace gazebo
       private: std::thread rosQueueThread;
 
       public: virtual void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf){
+
         if (_model->GetJointCount() == 0)  {
           std::cerr << "Invalid joint count, Velodyne plugin not loaded\n";
           return;
@@ -46,14 +46,12 @@ namespace gazebo
 
         this->modelo=_model;
         this->joint=modelo->GetJoints()[1];
-        this->pid = common::PID(1,1,1.5);
-        gzdbg<<"Bienvenidos a la Plataforma de Recontruccion \r\n";
-        gzdbg <<  this->joint->GetName() + "   \r\n";
+        this->pid = common::PID(0.1,1.5,2);
 
         this->modelo->GetJointController()->SetPositionPID(this->joint->GetScopedName(), this->pid);
         double position = 0;
         this->SetPosition(position);
-        this->ms<<position;
+
         this->rosNode.reset(new ros::NodeHandle("gazebo_client"));
         // Create a named topic, and subscribe to it.
         ros::SubscribeOptions so =ros::SubscribeOptions::create<std_msgs::Float32>(
@@ -76,6 +74,12 @@ namespace gazebo
         this->rosPub=this->rosNode->advertise(ad);
         // Spin up the queue helper thread.
         this->rosQueueThread =std::thread(std::bind(&RotacionPlataforma::QueueThread, this));
+
+
+
+        gzdbg<<"Bienvenidos a la Plataforma de Recontruccion \r\n";
+        gzdbg <<  this->joint->GetName() + "   \r\n";
+
     }
 
     static void desconexion(const ros::SingleSubscriberPublisher&){
@@ -83,17 +87,20 @@ namespace gazebo
 
     }
     public: void SetPosition(const double &_position){
-      this->modelo->GetJointController()->SetPositionTarget(this->joint->GetScopedName(), _position);
-      this->ms<<_position;
-      this->ms<<0;
+
+      while(this->joint->GetAngle(0).Radian()<_position){
+          this->modelo->GetJointController()->SetPositionTarget(this->joint->GetScopedName(), _position);
+      }
+      this->ms<<this->joint->GetAngle(0).Radian();
+
 
     }
     static void conexion(const ros::SingleSubscriberPublisher&){
       ROS_INFO("Me conecto");
-
     }
     public: void OnRosMsg(const std_msgs::Float32ConstPtr &_msg){
       this->SetPosition(_msg->data);
+
     }
     /// \brief ROS helper function that processes messages
     private: void QueueThread(){
@@ -101,10 +108,10 @@ namespace gazebo
       while (this->rosNode->ok())
       {
         this->rosQueue.callAvailable(ros::WallDuration(timeout));
-        std_msgs::String m;
-        std::stringstream  ms;
-        ;
-        m.data=this->ms.str();
+
+
+        this->m.data="";
+        this->m.data=this->ms.str();
         this->rosPub.publish(m);
       }
     }
