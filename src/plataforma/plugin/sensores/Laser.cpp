@@ -21,7 +21,7 @@ namespace gazebo {
 		}
 		using boost::dynamic_pointer_cast;
 		this->sensorPtr=dynamic_pointer_cast<sensors::RaySensor>(_parent);
-		this->topic="/"+((_sdf->HasElement("topic"))?_sdf->GetElement("topic")->GetValue()->GetAsString():_parent->Name());
+		this->topic="/scan";
 		this->nodo.reset(new ros::NodeHandle("ray_laser"));
 
 		/*ros::SubscribeOptions so=ros::SubscribeOptions::create<sensor_msgs::LaserScan>(
@@ -34,7 +34,7 @@ namespace gazebo {
 		this->subscriber=this->nodo->subscribe(so);/**/
 
 		ros::AdvertiseOptions ad=ros::AdvertiseOptions::create<sensor_msgs::LaserScan>(
-						this->topic+"_pub",
+						this->topic,
 						1,
 						boost::bind(&Laser::conexion, this),
 						boost::bind(&Laser::desconexion, this),
