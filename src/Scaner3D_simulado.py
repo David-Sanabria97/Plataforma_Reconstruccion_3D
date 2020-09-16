@@ -2,6 +2,7 @@ import rospy, os, sys, time, psutil
 import matplotlib.pyplot as plt
 import numpy as np
 from std_msgs.msg import String
+from std_msgs.msg import Float32
 from sensor_msgs.msg import *
 import math
 from math import radians
@@ -39,11 +40,12 @@ class scan():
         self.Green = np.zeros([1,726])
         self.Red = np.zeros([1,726])
         self.bridge = CvBridge()
+        self.pose=0
         rospy.loginfo("Starting node")
         rospy.init_node('scanner', anonymous=True)
-        self.pub = rospy.Publisher('angle', String, queue_size=1)
+        self.pub = rospy.Publisher('/RotacionPlataforma', Float32, queue_size=1)
         rospy.Subscriber('/Hokuyo_pub',LaserScan, self.read_scan, queue_size=1)
-        rospy.Subscriber('/RotacionPlataforma_PUB',String, position, queue_size=1)
+        rospy.Subscriber('/RotacionPlataforma_PUB',String, self.position, queue_size=1)
         rospy.Subscriber('/usb_cam/image_raw',Image, self.captura_imagen, queue_size=1)
         self.syncrony_flag=0
         while not rospy.is_shutdown():
@@ -110,7 +112,13 @@ class scan():
         delta_steps = int(delta_degree*3600000) #pasar de grados a pasos del motor
         Max_steps   = int((Max_degree)*3600000)
         if (Max_steps > cont) and self.syncrony_flag==1:
-
+            self.pub.publish(0)
+            pose = self.pose
+            # Garantiza moviento de un delta_deg
+            while abs(delta_degree-float(pose)) > 0.0:
+                self.pub.publish(delta_degree*math.pi/180)
+                pose = self.pose
+                print pose
             # Actualiza promedio de lecturas LiDAR
             Xa = Xo[260:480]
             Ya = Yo[260:480]
@@ -134,13 +142,17 @@ class scan():
             cont += delta_steps
             theta+= delta_degree
             rospy.loginfo("Theta: "+str(theta))
-            self.pub.publish(theta)
+            self.pub.publish(theta*math.pi/180.0)
             #time.sleep(0.2)
             self.syncrony_flag=0
             toc = time.time()
             tiempo = toc - tic
         if Max_steps  < cont:
             FLAG = 1
+
+    def position(self,data):
+        self.pose = data
+        print self.pose
 
 def saveCloud_txt(fileName):
     global completeName
@@ -150,7 +162,9 @@ def saveCloud_txt(fileName):
     return f
 
 if __name__ == '__main__':
+
     fileName = str(sys.argv[1])
     f = saveCloud_txt(fileName)
     sc = scan()
+
     print "termino"
