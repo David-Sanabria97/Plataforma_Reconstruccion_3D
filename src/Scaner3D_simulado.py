@@ -29,37 +29,38 @@ dX = 0.75
 dY = 0
 dLim =dX+0.05
 
+
 class scan():
     def __init__(self):
 
-        self.delta_alfa = 726
+        self.delta_alfa = 720
         self.datos = np.zeros([self.delta_alfa,20])
-        self.my_scan = np.zeros([726,1])
+        self.my_scan = np.zeros([720,1])
         self.counter=0
-        self.Blue = np.zeros([1,726])
-        self.Green = np.zeros([1,726])
-        self.Red = np.zeros([1,726])
+        self.Blue = np.zeros([1,720])
+        self.Green = np.zeros([1,720])
+        self.Red = np.zeros([1,720])
         self.bridge = CvBridge()
         self.pose=0
+
         rospy.loginfo("Starting node")
         rospy.init_node('scanner', anonymous=True)
         self.pub = rospy.Publisher('/RotacionPlataforma', Float32, queue_size=1)
-        rospy.Subscriber('/Hokuyo_pub',LaserScan, self.read_scan, queue_size=1)
-        rospy.Subscriber('/RotacionPlataforma_PUB',String, self.position, queue_size=1)
+        rospy.Subscriber('/scan',LaserScan, self.read_scan, queue_size=1)
+        rospy.Subscriber('/RotacionPlataforma_PUB',Float32, self.position, queue_size=1)
         rospy.Subscriber('/usb_cam/image_raw',Image, self.captura_imagen, queue_size=1)
         self.syncrony_flag=0
         while not rospy.is_shutdown():
             self.mov_motor()
 
+
     def read_scan(self,data):
-        global l,Xo,Yo,Zo, theta,FLAG, dX, dY, dZ,dLim
+        global l,Xo,Yo,Zo,theta,FLAG, dX, dY, dZ,dLim
         if FLAG == 0:
             s = np.ones([len(data.ranges),1])
             s[:,0]=data.ranges
-            self.my_scan=s[0:726,0]
-            alfa = np.linspace(-120,120,self.delta_alfa )
-
-
+            self.my_scan=s[0:720,0]
+            alfa = np.linspace(-120,120,self.delta_alfa)
             if self.syncrony_flag==0:
                 # limita el rango de vision
                 for i in range(len(self.my_scan)):
@@ -94,7 +95,7 @@ class scan():
                     Zo = out[2,:]
                     l = len(self.my_scan)
                     self.datos = np.zeros([self.delta_alfa ,20])
-                    self.syncrony_flag=1
+                    self.syncrony_flag=0
 
     def captura_imagen(self,data):
         cv2_img = bridge.imgmsg_to_cv2(data, "bgr8")
@@ -111,48 +112,35 @@ class scan():
         Max_degree  = float(arg[2])
         delta_steps = int(delta_degree*3600000) #pasar de grados a pasos del motor
         Max_steps   = int((Max_degree)*3600000)
-        if (Max_steps > cont) and self.syncrony_flag==1:
+        if (Max_steps > cont) and self.syncrony_flag==0:
             self.pub.publish(0)
-            pose = self.pose
+            pose1=self.pose
+            print self.pose
+            print "hola mundo"
             # Garantiza moviento de un delta_deg
-            while abs(delta_degree-float(pose)) > 0.0:
-                self.pub.publish(delta_degree*math.pi/180)
-                pose = self.pose
-                print pose
-            # Actualiza promedio de lecturas LiDAR
-            Xa = Xo[260:480]
-            Ya = Yo[260:480]
-            Za = Zo[260:480]
-            red = self.Red
-            green = self.Green
-            blue = self.Blue
-            # Registro de datos en txt
-            delta_image = 2
-
-            for i in range (len(Xa)):
-                Xx = Xa[i]
-                Yy = Ya[i]
-                Zz = Za[i]
-                Red = red[i*delta_image]
-                Green = green[i*delta_image]
-                Blue = blue[i*delta_image]
-                self.dataLine = str(Xx) + "\t"+ str(Yy) + "\t"+ str(Zz) + "\t"+ str(Red)+"\t"+ str(Green)+"\t"+ str(Blue) +"\n" # Escribe los datos X Y Z
-                f.write(self.dataLine)
+            while pose1<=self.pose:
+                self.pub.publish(1)
+                pose1=self.pose
+                self.pose = self.pose
+                print self.pose
+                print "asda"
 
             cont += delta_steps
             theta+= delta_degree
             rospy.loginfo("Theta: "+str(theta))
             self.pub.publish(theta*math.pi/180.0)
             #time.sleep(0.2)
-            self.syncrony_flag=0
+            self.syncrony_flag=1
             toc = time.time()
             tiempo = toc - tic
         if Max_steps  < cont:
             FLAG = 1
 
     def position(self,data):
-        self.pose = data
-        print self.pose
+        self.pose = data.data
+
+
+
 
 def saveCloud_txt(fileName):
     global completeName
@@ -162,9 +150,7 @@ def saveCloud_txt(fileName):
     return f
 
 if __name__ == '__main__':
-
     fileName = str(sys.argv[1])
     f = saveCloud_txt(fileName)
     sc = scan()
-
     print "termino"

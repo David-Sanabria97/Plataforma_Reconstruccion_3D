@@ -56,7 +56,6 @@ class scan():
             self.my_scan=s[0:726,0]
             alfa = np.linspace(-120,120,self.delta_alfa )
             #print s[363]
-
             if self.syncrony_flag==0:
                 # limita el rango de vision
                 for i in range(len(self.my_scan)):

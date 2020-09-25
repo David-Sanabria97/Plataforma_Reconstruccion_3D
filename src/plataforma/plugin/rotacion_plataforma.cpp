@@ -8,7 +8,7 @@
 #include "ros/ros.h"
 #include "ros/callback_queue.h"
 #include "ros/subscribe_options.h"
-#include "std_msgs/Float32.h"
+#include <std_msgs/Float32.h>
 #include "std_msgs/String.h"
 
 
@@ -26,6 +26,7 @@ namespace gazebo
       physics::ModelPtr modelo;
       std::stringstream  ms;
       std_msgs::String m;
+      std_msgs::Float32 ang_msg;
 
       /// A node use for ROS transport
       private: std::unique_ptr<ros::NodeHandle> rosNode;
@@ -58,7 +59,7 @@ namespace gazebo
               );
         this->rosSub = this->rosNode->subscribe(so);
 
-        ros::AdvertiseOptions ad=ros::AdvertiseOptions::create<std_msgs::String>(
+        ros::AdvertiseOptions ad=ros::AdvertiseOptions::create<std_msgs::Float32>(
               "/RotacionPlataforma_PUB",
               1,
               &this-> conexion,
@@ -72,7 +73,7 @@ namespace gazebo
 
         this->modelo=_model;
         this->joint=modelo->GetJoints()[1];
-        this->pid = common::PID(0.01,0.1,0.9);
+        this->pid = common::PID(0.01,0.1,1);
 
         this->modelo->GetJointController()->SetPositionPID(this->joint->GetScopedName(), this->pid);
         double position = 0;
@@ -88,15 +89,17 @@ namespace gazebo
     }
 
     public: void SetPosition(const double &_position){
-      this->ms=std::stringstream();
-      this->ms<<this->joint->GetAngle(0).Radian();
+    //  this->ms=std::stringstream();
+      this->ang_msg.data=this->joint->GetAngle(0).Radian();
       while(this->joint->GetAngle(0).Radian()<_position){
 
           this->modelo->GetJointController()->SetPositionTarget(this->joint->GetScopedName(), _position);
           gzdbg <<  joint->GetAngle(0).Radian()<< "   \r\n";
       }
-      this->ms=std::stringstream();
-      this->ms<<this->joint->GetAngle(0).Radian();
+      //this->ms=std::stringstream();
+      //this->ms<<this->joint->GetAngle(0).Radian();
+      this->ang_msg.data=this->joint->GetAngle(0).Radian();
+      this->rosPub.publish(this->ang_msg);
 
     }
     static void conexion(const ros::SingleSubscriberPublisher&){
@@ -112,8 +115,9 @@ namespace gazebo
       {
         this->rosQueue.callAvailable(ros::WallDuration(timeout));
 
-        this->m.data=this->ms.str();
-        this->rosPub.publish(m);
+        //this->m.data=this->ms.str();
+        //this->rosPub.publish(m);
+        this->rosPub.publish(this->ang_msg);
 
       }
     }

@@ -20,7 +20,7 @@ ros/callback_queue.h
 ros/subscribe_options.h
 /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/ros/subscribe_options.h
 std_msgs/Float32.h
-/home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/std_msgs/Float32.h
+-
 std_msgs/String.h
 /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/std_msgs/String.h
 stdio.h
