@@ -292,22 +292,9 @@ plataforma/CMakeFiles/plataforma.dir/plugin/rotacion_plataforma.cpp.o
  /usr/include/gazebo-7/gazebo/physics/PhysicsFactory.hh
  /usr/include/gazebo-7/gazebo/physics/PhysicsIface.hh
  /usr/include/gazebo-7/gazebo/physics/PhysicsTypes.hh
- /usr/include/gazebo-7/gazebo/physics/PlaneShape.hh
- /usr/include/gazebo-7/gazebo/physics/PolylineShape.hh
- /usr/include/gazebo-7/gazebo/physics/Population.hh
- /usr/include/gazebo-7/gazebo/physics/PresetManager.hh
  /usr/include/gazebo-7/gazebo/physics/RayShape.hh
- /usr/include/gazebo-7/gazebo/physics/Road.hh
- /usr/include/gazebo-7/gazebo/physics/ScrewJoint.hh
  /usr/include/gazebo-7/gazebo/physics/Shape.hh
- /usr/include/gazebo-7/gazebo/physics/SliderJoint.hh
- /usr/include/gazebo-7/gazebo/physics/SphereShape.hh
  /usr/include/gazebo-7/gazebo/physics/State.hh
- /usr/include/gazebo-7/gazebo/physics/SurfaceParams.hh
- /usr/include/gazebo-7/gazebo/physics/UniversalJoint.hh
- /usr/include/gazebo-7/gazebo/physics/UserCmdManager.hh
- /usr/include/gazebo-7/gazebo/physics/World.hh
- /usr/include/gazebo-7/gazebo/physics/WorldState.hh
  /usr/include/gazebo-7/gazebo/physics/physics.hh
  /usr/include/gazebo-7/gazebo/rendering/RenderTypes.hh
  /usr/include/gazebo-7/gazebo/sensors/SensorTypes.hh

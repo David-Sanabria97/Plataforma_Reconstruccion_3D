@@ -73,7 +73,7 @@ namespace gazebo
 
         this->modelo=_model;
         this->joint=modelo->GetJoints()[1];
-        this->pid = common::PID(0.01,0.1,1);
+        this->pid = common::PID(0.02,0.3,0.1);
 
         this->modelo->GetJointController()->SetPositionPID(this->joint->GetScopedName(), this->pid);
         double position = 0;
@@ -91,7 +91,7 @@ namespace gazebo
     public: void SetPosition(const double &_position){
     //  this->ms=std::stringstream();
       this->ang_msg.data=this->joint->GetAngle(0).Radian();
-      while(this->joint->GetAngle(0).Radian()<_position){
+      while(this->joint->GetAngle(0).Radian()<(_position-0.0009)){
 
           this->modelo->GetJointController()->SetPositionTarget(this->joint->GetScopedName(), _position);
           gzdbg <<  joint->GetAngle(0).Radian()<< "   \r\n";

@@ -110,12 +110,11 @@
     <model name='Plataforma'>
 
       <pose>0 0 -0.078 1.57 -0 0</pose>
-      <static>false</static>
+
 
       <link name='Chassis'>
         <inertial>
-
-          <static>1</static>
+          <static>true</static>
           <mass>100.42984</mass>
           <pose frame=''>-0.010777 0.141328 0.086455 0 -0 0</pose>
           <inertia>
@@ -131,7 +130,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>file:///home/david/robot/meshes/Chassis.STL</uri>
+              <uri>file:///home/david/Plataforma_Reconstruccion_3D/meshes/Chassis.STL</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -140,18 +139,18 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>file:///home/david/robot/meshes/Chassis.STL</uri>
+              <uri>file:///home/david/Plataforma_Reconstruccion_3D/meshes/Chassis.STL</uri>
             </mesh>
           </geometry>
         </visual>
 
-        
+
         <gravity>1</gravity>
       </link>
       <link name='motor'>
         <inertial>
           <mass>0.0130941</mass>
-          <static>1</static>
+          <static>true</static>
           <kinematic>0</kinematic>
           <pose frame=''>-0.010741 0.104492 0.267655 0 -0 0</pose>
           <inertia>
@@ -168,7 +167,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>file:///home/david/robot/meshes/motor.STL</uri>
+              <uri>file:///home/david/Plataforma_Reconstruccion_3D/meshes/motor.STL</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -193,7 +192,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>file:///home/david/robot/meshes/motor.STL</uri>
+              <uri>file:///home/david/Plataforma_Reconstruccion_3D/meshes/motor.STL</uri>
             </mesh>
           </geometry>
         </visual>
@@ -201,6 +200,7 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
+
       <joint name='Chassis-motor' type='revolute'>
         <parent>Chassis</parent>
         <child>motor</child>
@@ -223,6 +223,7 @@
       </joint>
       <link name='plataforma'>
         <inertial>
+
           <mass>0.169786</mass>
           <pose frame=''>-0.059685 0.121254 0.281926 0 -0 0</pose>
           <inertia>
@@ -239,7 +240,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>file:///home/david/robot/meshes/plataforma.STL</uri>
+              <uri>file:///home/david/Plataforma_Reconstruccion_3D/meshes/Plataforma_mata.STL</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -265,7 +266,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>file:///home/david/robot/meshes/plataforma.STL</uri>
+              <uri>file:///home/david/Plataforma_Reconstruccion_3D/meshes/Plataforma_mata.STL</uri>
             </mesh>
           </geometry>
         </visual>
@@ -309,7 +310,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>file:///home/david/robot/meshes/Camara.STL</uri>
+              <uri>file:///home/david/Plataforma_Reconstruccion_3D/meshes/Camara.STL</uri>
             </mesh>
           </geometry>
           <surface>
@@ -338,7 +339,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>file:///home/david/robot/meshes/Camara.STL</uri>
+              <uri>file:///home/david/Plataforma_Reconstruccion_3D/meshes/Camara.STL</uri>
             </mesh>
           </geometry>
         </visual>
@@ -364,8 +365,8 @@
           <ray>
             <scan>
               <horizontal>
-                <samples>720</samples>
-                <resolution>1</resolution>
+                <samples>726</samples>
+                <resolution>0.00628</resolution>
                 <min_angle>-2.26889</min_angle>
                 <max_angle>2.2689</max_angle>
               </horizontal>
@@ -410,5 +411,6 @@
       </joint>
       <plugin name='RotacionPlataforma' filename='libplataforma.so'/>
     </model>
+
   </world>
 </sdf>
