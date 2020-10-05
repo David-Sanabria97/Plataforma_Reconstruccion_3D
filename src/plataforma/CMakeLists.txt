@@ -136,7 +136,7 @@ include_directories(
 
 ## Declare a C++ library
 add_library(${PROJECT_NAME}
-  /home/david/Plataforma_Reconstruccion_3D/src/plataforma/plugin/rotacion_plataforma.cpp
+  /Plataforma_Reconstruccion_3D/src/plataforma/plugin/rotacion_plataforma.cpp
 
  )
 add_library(mi_laser

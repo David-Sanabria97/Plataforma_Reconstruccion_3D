@@ -240,7 +240,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>file:///home/david/Plataforma_Reconstruccion_3D/meshes/Plataforma_mata.STL</uri>
+              <uri>file:///home/david/Plataforma_Reconstruccion_3D/meshes/plataforma_cactus.STL</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -266,7 +266,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>file:///home/david/Plataforma_Reconstruccion_3D/meshes/Plataforma_mata.STL</uri>
+              <uri>file:///home/david/Plataforma_Reconstruccion_3D/meshes/plataforma_cactus.STL</uri>
             </mesh>
           </geometry>
         </visual>
@@ -366,7 +366,7 @@
             <scan>
               <horizontal>
                 <samples>726</samples>
-                <resolution>0.00628</resolution>
+                <resolution>1</resolution>
                 <min_angle>-2.26889</min_angle>
                 <max_angle>2.2689</max_angle>
               </horizontal>
