@@ -1,6 +1,6 @@
 # Plataforma_Reconstruccion_3D
 
-El codigo es la simulacion de una pltaforma de recontruccion 3D apartir de un sensor LiDAR HOKUYP el cual emite un laser 2D, la simulacion es realizada en GAZEBO
+El codigo es la simulacion de una pltaforma de recontruccion 3D apartir de un sensor LiDAR HOKUYO el cual emite un laser 2D, la simulacion es realizada en GAZEBO
 Cuenta con un Launcher, el mundo de GAZEBO con el modelo de la plataforma de recontruccion, dos codigos en python para la recontruccion simulada y real.
 
 CLONAR REPOSITORIO 
