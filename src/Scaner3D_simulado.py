@@ -27,7 +27,7 @@ FLAG = 0
 dZ = 0.22
 dX = 0.35
 dY = 0
-dLim =dX+0.07   
+dLim =dX+0.15  
 
 
 class scan():

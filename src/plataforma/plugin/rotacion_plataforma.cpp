@@ -73,7 +73,7 @@ namespace gazebo
 
         this->modelo=_model;
         this->joint=modelo->GetJoints()[1];
-        this->pid = common::PID(0.05,0.3,0.1);
+        this->pid = common::PID(39,20,10);
 
         this->modelo->GetJointController()->SetPositionPID(this->joint->GetScopedName(), this->pid);
         double position = 0;
