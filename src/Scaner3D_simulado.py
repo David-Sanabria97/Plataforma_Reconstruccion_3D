@@ -27,7 +27,7 @@ FLAG = 0
 dZ = 0.22
 dX = 0.35
 dY = 0
-dLim =dX+0.05
+dLim =dX+0.07   
 
 
 class scan():
@@ -66,7 +66,7 @@ class scan():
                 # limita el rango de vision
                 for i in range(len(self.my_scan)):
                     #alfa[i] = 120-0.3314917127*(i)
-                    if np.isnan(self.my_scan[i]):
+                    if np.isnan(self.my_scan[i])  or self.my_scan[i] > dLim  or self.my_scan[i] < 0.06:
                         self.my_scan[i] = np.nan
                 self.datos[:,self.counter] = self.my_scan
                 self.counter+=1
